@@ -1,0 +1,215 @@
+/* Josh Comeau's Reset */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+/* variables for colours and fonts*/
+:root {
+    --clr-gradient-1: hsl(6, 100%, 80%);
+    --clr-gradient-2: hsl(335, 100%, 65%);
+    --clr-pale-blue-100: hsl(243, 100%, 93%);
+    --clr-greyish-blue-200: hsl(229, 7%, 55%);
+    --clr-dark-blue-800: hsl(228, 56%, 26%);
+    --clr-very-dark-blue-900: hsl(229, 57%, 11%);
+
+    --fs-default: 0.8750em;
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+
+/* typography and background*/
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: var(--fw-regular);
+    color: var(--clr-pale-blue-100);
+    background-image: url(./images/bg-mobile.png);
+    background-size: cover;
+}
+
+.bold-font {
+    font-weight: var(--fw-bold);
+}
+
+.xxlarge {
+    font-size: 3em;
+}
+
+.small-caps {
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+@media (min-width: 64em) {
+    body {
+        background-image: url(./images/bg-desktop.png);
+    }
+}
+
+/* styling the wrapper and sections */
+
+.flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+ 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+section {
+    background-color: var(--clr-dark-blue-800);
+    padding: 3em;
+    width: 90%;
+    border-radius: 15px;
+}
+
+/* logo and buttons */
+
+.logo-container {
+    margin-bottom: 3em;
+}
+
+.buttons {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+
+}
+
+.button {
+    background-color: var(--clr-very-dark-blue-900);
+    padding: max(1em, 10px);
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+
+.rounded-corner {
+    border-radius: 15px 100px 15px 15px;
+}
+
+
+/* progress bar */
+
+.progress-bar-container {
+    width: 100%;
+    margin: auto;
+    background-color: var(--clr-very-dark-blue-900);
+    height: 1em;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar {
+    width: 81.5%;
+    background-color: var(--clr-gradient-1);
+    background-image: linear-gradient(90deg, var(--clr-gradient-1), var(--clr-gradient-2));
+    height: 75%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.progress-circle {
+    height: 0;
+    width: 0;
+    padding: 0.5em;
+    background-color: var(--clr-pale-blue-100);
+    border-radius: 50%;
+}
+
+.flex-spread-apart {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#used-storage {
+    padding-bottom: 0.5em;
+}
+
+.gb-left {
+    background-color: white;
+    color: var(--clr-very-dark-blue-900);
+    text-align: center;
+    width: 80%;
+    border-radius: 15px;
+    margin: -1em auto;
+    position: relative;
+    bottom: -2em;
+    
+}
+
+/* footer attribution */
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
